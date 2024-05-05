@@ -9,6 +9,7 @@ import com.fcaih.helwantournaments.exception.EntityNotFoundException;
 import com.fcaih.helwantournaments.model.Team;
 import com.fcaih.helwantournaments.model.User;
 import com.fcaih.helwantournaments.repository.TeamRepository;
+import com.fcaih.helwantournaments.repository.UserRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -17,9 +18,12 @@ import lombok.AllArgsConstructor;
 public class TeamServiceImpl implements TeamService {
 
     private TeamRepository teamRepository;
+    private UserRepository userRepository;
 
     @Override
-    public Team saveTeam(Team team) {
+    public Team saveTeam(Team team, Long captainId) {
+        User captain = UserServiceImpl.unwrapUser(userRepository.findById(captainId), 404L);
+        team.setCaptain(captain);
         return teamRepository.save(team);
     }
 
@@ -27,6 +31,11 @@ public class TeamServiceImpl implements TeamService {
     public Team getTeamById(Long id) {
         Optional<Team> team = teamRepository.findById(id);
         return unwrapTeam(team, id);
+    }
+
+    @Override
+    public List<Team> getAllTeams() {
+        return teamRepository.findAll();
     }
 
     @Override
@@ -39,22 +48,8 @@ public class TeamServiceImpl implements TeamService {
         Optional<Team> team = teamRepository.findById(id);
         Team unwrappedTeam = unwrapTeam(team, id);
         unwrappedTeam.setName(name);
+        teamRepository.save(unwrappedTeam);
         return unwrappedTeam;
-    }
-
-    @Override
-    public Team updateTeamPlayers(Long id, List<User> players) {
-        Optional<Team> team = teamRepository.findById(id);
-        Team unwrappedTeam = unwrapTeam(team, id);
-        unwrappedTeam.setPlayers(players);
-        return unwrappedTeam;
-    }
-
-    @Override
-    public List<User> getTeamPlayers(Long id) {
-        Optional<Team> team = teamRepository.findById(id);
-        Team unwrappedTeam = unwrapTeam(team, id);
-        return unwrappedTeam.getPlayers();
     }
 
     static Team unwrapTeam(Optional<Team> entity, Long id) {
