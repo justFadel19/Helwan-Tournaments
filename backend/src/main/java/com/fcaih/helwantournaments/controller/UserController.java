@@ -41,9 +41,15 @@ public class UserController {
         return new ResponseEntity<>(userService.saveUser(User), HttpStatus.CREATED);
     }
 
-    @PutMapping("/{username}")
-    public ResponseEntity<HttpStatus> updateUser(@RequestBody User user) {
-        userService.deleteUser(user.getUsername());
+    @PutMapping("/{username}/username")
+    public ResponseEntity<HttpStatus> updateUserUsername(@PathVariable String username, @RequestBody User user) {
+        userService.updateUserUsername(username, user.getUsername());
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping("/{username}/email")
+    public ResponseEntity<HttpStatus> updateUserEmail(@PathVariable String username, @RequestBody User user) {
+        userService.updateUserEmail(username, user.getEmail());
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

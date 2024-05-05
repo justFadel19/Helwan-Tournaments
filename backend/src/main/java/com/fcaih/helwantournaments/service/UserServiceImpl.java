@@ -23,6 +23,22 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public User updateUserUsername(String username, String newusername) {
+        User user = getUserByUsername(username);
+        user.setUsername(newusername);
+        userRepository.save(user);
+        return user;
+    }
+
+    @Override
+    public User updateUserEmail(String username, String newemail) {
+        User user = getUserByUsername(username);
+        user.setEmail(newemail);
+
+        return user;
+    }
+
+    @Override
     public User getUserByUsername(String username) {
         Optional<User> user = userRepository.findByUsername(username);
         return unwrapUser(user, 404L);
