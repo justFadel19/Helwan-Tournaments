@@ -47,7 +47,7 @@ public class User {
     private UserRole role;
 
     // Enum representing user roles
-    enum UserRole {
+    public enum UserRole {
         ADMIN,
         ORGANIZER,
         PLAYER
