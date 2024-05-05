@@ -7,6 +7,9 @@
 # IntelliJ IDEA files
 .idea/
 
+# Visual Studio Code files
+.vscode/
+
 # Eclipse files
 .classpath
 .project
