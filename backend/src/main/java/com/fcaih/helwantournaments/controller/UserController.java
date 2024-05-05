@@ -1,0 +1,56 @@
+package com.fcaih.helwantournaments.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fcaih.helwantournaments.model.User;
+import com.fcaih.helwantournaments.model.User.UserRole;
+import com.fcaih.helwantournaments.service.UserService;
+
+import lombok.AllArgsConstructor;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+
+
+@RestController
+@AllArgsConstructor
+@RequestMapping("/user")
+public class UserController {
+
+    private UserService userService;
+
+    @GetMapping("/{username}")
+    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
+        User user = userService.getUserByUsername(username);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    // implement get user by it's email and another one by it's id.
+
+    @PostMapping("/register")
+    public ResponseEntity<User> saveUser(@RequestBody User User) {
+        User.setRole(UserRole.PLAYER);
+        return new ResponseEntity<>(userService.saveUser(User), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{username}")
+    public ResponseEntity<HttpStatus> updateUser(@RequestBody User user) {
+        userService.deleteUser(user.getUsername());
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping("{username}")
+    public ResponseEntity<Void> deleteUser(@PathVariable String username) {
+        userService.deleteUser(username);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+}
