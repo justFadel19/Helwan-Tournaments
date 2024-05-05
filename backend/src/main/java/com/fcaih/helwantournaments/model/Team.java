@@ -45,4 +45,8 @@ public class Team {
     @ManyToOne
     @JoinColumn(name = "captain_id", nullable = false)
     private User captain;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "team")
+    private List<User> players;
 }
