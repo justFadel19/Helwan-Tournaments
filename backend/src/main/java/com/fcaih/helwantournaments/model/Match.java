@@ -29,7 +29,7 @@ public class Match {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "tournament_id", nullable = false)
     private Tournament tournament;
 
