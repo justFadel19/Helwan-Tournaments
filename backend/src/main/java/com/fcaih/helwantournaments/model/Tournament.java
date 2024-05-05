@@ -30,6 +30,7 @@ public class Tournament {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @NotBlank
@@ -42,13 +43,9 @@ public class Tournament {
     @Column(nullable = false)
     private String description;
 
-    @NotBlank
-    @NonNull
     @Column(name = "start_date", nullable = false)
     private Date startDate;
 
-    @NotBlank
-    @NonNull
     @Column(name = "end_date", nullable = false)
     private Date endDate;
 
