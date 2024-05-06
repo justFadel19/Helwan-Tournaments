@@ -4,6 +4,10 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-rou
 import Login from './component/Login&SignIn/Login/login';
 import Regester from './component/Login&SignIn/Login/signin';
 import UserHome from './component/User/UserHome/UserHome';
+import Profile from './component/User/UserProfile/profile';
+import RunningMatch from './component/match/runningMatch/Rmatch';
+import OrgnizerProfile from './component/Orgnizer/OrgnizerProfile/OrgnizerProfile';
+import AddForm from './component/Orgnizer/OrgnizerForms/addForm';
 
 function App() {
   return (
@@ -16,6 +20,10 @@ function App() {
         <Route path='/' element={<Login/>} />
         <Route path="/regester" element={<Regester/>} />
         <Route path="/UserHome" element={<UserHome/>} />
+        <Route path="/OrgnizerProfil" element={<OrgnizerProfile/>} />
+        <Route path="/AddForm" element={<AddForm/>} />
+        <Route path="/Profile" element={<Profile/>} />
+        <Route path="/runningMatches" element={<RunningMatch/>} />
       </Routes>
     </BrowserRouter>
     </div>

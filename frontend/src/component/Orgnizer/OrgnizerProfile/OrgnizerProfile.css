@@ -1,0 +1,16 @@
+.Orgnizer_sec_1 {
+    background-color: #0e0437;
+    height: 100%;
+}
+
+#add_button {
+    background-color: #237545;
+    color: #fff;
+    transition: .3s;
+    float: right !important;
+}
+
+#add_button:hover {
+    border: solid #05ea64;
+
+}

@@ -1,0 +1,31 @@
+#profile_butt{
+    background-color:#45f882;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: .4s;
+}
+#logOut{
+    background-color:#d32525;
+    color:white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: .4s;
+    margin: 4px;
+}
+#logOut:hover{
+    background-color: #641809;
+}
+#profile_butt:hover{
+    background-color: #2b8a4b;
+}
+nav {
+    background-color:#0d121a;
+    color: #fff !important;
+   
+    /* text-transform: uppercase; */
+}
+#uls a{ font-weight: bold !important; }
+#uls a:hover{
+color: #45f882 !important;
+}
