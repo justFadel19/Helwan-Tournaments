@@ -1,9 +1,91 @@
 #first_sec{
-    background: #ab0a28 !important;
+    background: #120f2d !important;
+}
+#home  {
+    color:#45f882 !important;
 }
 thead{
-    background-color: #ab0a28;
-    color: aliceblue;
+    background-color: #199442;
+    color: #fff;
     font-weight: bold !important;
     font-size: 18px;
+
+}
+.sec_1{
+    background-color:#19222b !important;
+}
+
+tbody{
+    color: #fff;
+    /* border: #fff; */
+    border: 1px solid rgb(254, 254, 254);
+}
+#tablee{
+    border-collapse: collapse;
+	border: 1px solid rgb(254, 254, 254);
+	text-align: center;
+	vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* th {
+    background-color:#32bc60;
+    color: white;
+  } */
+tr:hover {background-color: rgb(30, 79, 35);}
+.tit h2{
+    color: #fff !important;
+    text-transform: uppercase;
+}
+.tit h5{
+    color:  #45f882 !important;
+    text-transform: uppercase;
+}
+
+#sec1{
+    background-color: #0f1c23;
+}
+.matchess{
+    background-color: #0f1c23;
+  
+}
+.card_continer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardd{
+    color: #fff;
+    padding: 20px;
+    /* display: block; */
+    /* border: solid #fff;  */
+    border-radius: 20px;
+    height: 50%;
+    width: 900px ;
+    margin: 20px;
+    /* margin: 100px; */
+    background-color:#19222b;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+#tornment_imge{
+    width: 80px;
+}
+#space3{
+    margin-right: 90px;
+}
+#vs{
+    font-size: 40px;
+    color:#45f882;
+}
+#num1{
+    font-size: 26px;
+}
+#num2{
+    font-size: 26px;
+}
+#team_namee{
+    font-size: 20px;
+    font-weight: bold;
 }

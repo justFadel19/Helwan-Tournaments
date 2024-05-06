@@ -53,7 +53,7 @@ public class TournamentController {
         return new ResponseEntity<>(tournamentService.updateTournamentName(id, tournament.getName()), HttpStatus.OK);
     }
 
-    @PutMapping("/{id}/description")
+    @PutMapping("/{id}")
     public ResponseEntity<Tournament> updateTournamentDescription(@PathVariable Long id, @RequestBody Tournament tournament) {
         return new ResponseEntity<>(tournamentService.updateTournamentDescription(id, tournament.getDescription()), HttpStatus.OK);
     }
