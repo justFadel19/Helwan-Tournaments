@@ -2,6 +2,7 @@ package com.fcaih.helwantournaments.service;
 
 import java.util.Optional;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.fcaih.helwantournaments.exception.EntityNotFoundException;
@@ -15,10 +16,11 @@ import lombok.AllArgsConstructor;
 public class UserServiceImpl implements UserService{
 
     private UserRepository userRepository;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public User saveUser(User user) {
-        // do the password hashing here.
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 

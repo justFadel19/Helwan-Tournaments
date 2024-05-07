@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  backend:
+    image: helwan-tournaments-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+
+  frontend:
+    image: helwan-tournaments-frontend
+    ports:
+      - "3000:3000"
+
+  database:
+    image: mysql:8.0.31
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: helwan_tournaments
+    ports:
+      - "3307:3306"
+    expose:
+      - "3307"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
