@@ -13,6 +13,7 @@
     transition: .4s;
     margin: 4px;
 }
+
 #logOut:hover{
     background-color: #641809;
 }
