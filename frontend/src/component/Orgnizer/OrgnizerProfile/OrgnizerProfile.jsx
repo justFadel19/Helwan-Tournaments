@@ -39,6 +39,8 @@ function OrgnizerProfile() {
                                 <div className="mt-3">
                                     <h4 style={{ color: '#FFF' }}>Fego</h4>
                                     <p className="text-secondary mb-1"> Orgnizer </p>
+                                    <p className="text-secondary mb-1"> Orgnizer@lol </p>
+                                    <p className="text-secondary mb-1"> 0123456987</p>
                                     <p className="text-secondary mb-1"> ID:147258369 </p>
                                     <p className="text-muted font-size-sm">  </p>
                                     {/* <button className="btn btn-primary">Follow</button> */}

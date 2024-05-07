@@ -36,7 +36,7 @@ function Login() {
                                             </div>
                                             <div class="w-100">
                                                 <p class="social-media d-flex justify-content-end">
-                                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class=""> <i class="fa-brands fa-google"></i></span></a>
+                                                    <Link to={"/AdminDashboard"}> <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class=""> <i class="fa-brands fa-google"></i></span></a> </Link> 
                                                     <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class=""> <i class="fa-brands fa-facebook"></i>  </span></a>
                                                 </p>
                                             </div>
