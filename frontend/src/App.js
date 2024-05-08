@@ -8,6 +8,7 @@ import Profile from './component/User/UserProfile/profile';
 import RunningMatch from './component/match/runningMatch/Rmatch';
 import OrgnizerProfile from './component/Orgnizer/OrgnizerProfile/OrgnizerProfile';
 import AddForm from './component/Orgnizer/OrgnizerForms/addForm';
+import AdminDashboard from './component/admin/adminDashbourd/adminDashbourd';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/AddForm" element={<AddForm/>} />
         <Route path="/Profile" element={<Profile/>} />
         <Route path="/runningMatches" element={<RunningMatch/>} />
+        <Route path="/AdminDashboard" element={<AdminDashboard/>} />
       </Routes>
     </BrowserRouter>
     </div>
